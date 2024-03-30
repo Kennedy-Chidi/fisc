@@ -470,6 +470,8 @@ const finishInterruptedActiveDeposit = async (
   }, interval);
 };
 
+//
+
 exports.approveDeposit = catchAsync(async (req, res, next) => {
   await Transaction.findByIdAndDelete(req.params.id);
   await History.create(req.body);
